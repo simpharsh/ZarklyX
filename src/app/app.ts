@@ -9,11 +9,12 @@ import { SlidersComponent } from './components/sliders/sliders';
 import { ExpertSolutionsComponent } from './components/expert-solutions/expert-solutions';
 import { TrustedIntegrationsComponent } from "./components/trusted-integrations/trusted-integrations";
 import { FaqComponent } from "./components/faq/faq";
+import { FooterComponent } from "./components/footer/footer";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar, HeroComponent, EcosystemComponent, NextGenComponent, BlackSectionComponent, SlidersComponent, ExpertSolutionsComponent, TrustedIntegrationsComponent, FaqComponent],
+  imports: [RouterOutlet, Navbar, HeroComponent, EcosystemComponent, NextGenComponent, BlackSectionComponent, SlidersComponent, ExpertSolutionsComponent, TrustedIntegrationsComponent, FaqComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

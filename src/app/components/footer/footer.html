@@ -1,0 +1,72 @@
+<footer class="footer-section">
+  <div class="container">
+    
+    <div class="footer-top">
+      
+      <div class="brand-info">
+        <img [src]="brandLogo" alt="ZarklyX Logo" class="brand-logo-img">
+        
+        <p class="brand-desc">
+          is simply dummy text of the printing and typesetting industry. 
+          Lorem Ipsum has been the industry's standard text of the 
+          printing and typesetting industry.
+        </p>
+        
+        <div class="social-icons">
+          <a href="#" class="social-link" *ngFor="let icon of socialIcons">
+            <img [src]="icon" alt="Social Icon" class="social-icon-img">
+          </a>
+        </div>
+      </div>
+
+      <div class="certificates-grid">
+        <img *ngFor="let cert of certificates" [src]="cert" alt="Certification Badge" class="cert-img">
+      </div>
+      
+    </div>
+
+    <div class="footer-links">
+      
+      <div class="link-column">
+        <h4>Company</h4>
+        <ul>
+          <li *ngFor="let link of companyLinks"><a href="#">{{ link }}</a></li>
+        </ul>
+      </div>
+
+      <div class="link-column">
+        <h4>Modules</h4>
+        <ul>
+          <li *ngFor="let link of modulesLinks"><a href="#">{{ link }}</a></li>
+        </ul>
+      </div>
+
+      <div class="link-column">
+        <h4>Integrations</h4>
+        <ul>
+          <li *ngFor="let link of integrationsLinks"><a href="#">{{ link }}</a></li>
+        </ul>
+      </div>
+
+      <div class="link-column">
+        <h4>Solutions</h4>
+        <ul>
+          <li *ngFor="let link of solutionsLinks"><a href="#">{{ link }}</a></li>
+        </ul>
+      </div>
+
+      <div class="link-column">
+        <h4>Support</h4>
+        <ul>
+          <li *ngFor="let link of supportLinks"><a href="#">{{ link }}</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Zarklyx Private limited | All rights reserved</p>
+    </div>
+
+  </div>
+</footer>
