@@ -1,0 +1,162 @@
+/* --- Base Layout --- */
+.faq-section {
+  padding: 100px 20px;
+  background-color: #0b1a18; /* Deep dark green background */
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr; /* Right side is slightly wider */
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* =========================================
+   LEFT COLUMN
+========================================= */
+.faq-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-heading {
+  font-size: 16px;
+  color: #e2e8f0;
+  margin-bottom: 16px;
+}
+
+.faq-left h2 {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+  color: #ffffff;
+}
+
+.main-desc {
+  font-size: 15px;
+  color: #cbd5e1; /* Light grey/green */
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 90%;
+}
+
+/* Contact Card */
+.contact-card {
+  background-color: #273e3a; /* Lighter slate green */
+  border-radius: 12px;
+  padding: 40px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-card h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 16px 0;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+}
+
+.btn-mail {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-mail:hover {
+  background-color: #ffffff;
+  color: #0b1a18;
+}
+
+/* =========================================
+   RIGHT COLUMN (Accordion)
+========================================= */
+.faq-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background-color: #273e3a; /* Matches contact card */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s;
+}
+
+.faq-item:hover {
+  background-color: #2c4642; /* Slight hover effect */
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.faq-header h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  color: #ffffff;
+  padding-right: 20px;
+  line-height: 1.4;
+}
+
+/* Plus/Minus Icon Box */
+.icon-box {
+  width: 24px;
+  height: 24px;
+  background-color: #4fd1c5; /* Bright Teal */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Hidden Body Area */
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out; /* Smooth sliding animation */
+}
+
+.faq-content {
+  padding: 0 30px 30px 30px;
+}
+
+.faq-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Active (Open) State */
+.faq-item.active {
+  border-color: rgba(79, 209, 197, 0.3); /* Subtle teal border glow when open */
+}
+
+.faq-item.active .faq-body {
+  /* Using a large max-height allows it to transition open smoothly based on content */
+  max-height: 300px; 
+}

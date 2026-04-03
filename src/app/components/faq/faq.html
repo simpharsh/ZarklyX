@@ -1,0 +1,51 @@
+<section class="faq-section">
+  <div class="container">
+    
+    <div class="faq-left">
+      <span class="sub-heading">Get your answers</span>
+      <h2>Frequently asked<br>Questions</h2>
+      <p class="main-desc">
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.
+      </p>
+
+      <div class="contact-card">
+        <h3>Still have questions?</h3>
+        <p>Phasellus finibus est vel neque euismod, laoreet dapibus sem efficitur. Integer ultrices dolor eu dolor congue vitae.</p>
+        <button class="btn-mail">Send mail</button>
+      </div>
+    </div>
+
+    <div class="faq-right">
+      
+      <div class="faq-item" 
+           *ngFor="let faq of faqs; let i = index" 
+           [class.active]="faq.isOpen"
+           (click)="toggleFaq(i)">
+        
+        <div class="faq-header">
+          <h4>{{ faq.question }}</h4>
+          
+          <div class="icon-box">
+            <svg *ngIf="faq.isOpen" width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="14" height="2" fill="white"/>
+            </svg>
+            
+            <svg *ngIf="!faq.isOpen" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="6" width="14" height="2" fill="white"/>
+              <rect x="8" width="14" height="2" transform="rotate(90 8 0)" fill="white"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="faq-body">
+          <div class="faq-content">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+</section>
