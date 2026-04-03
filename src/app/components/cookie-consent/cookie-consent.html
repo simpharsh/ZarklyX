@@ -1,0 +1,40 @@
+<div class="cookie-modal-overlay" *ngIf="isVisible()">
+  <div class="cookie-consent-modal">
+    
+    <div class="modal-header">
+      <button class="close-btn" (click)="closePopUp()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="title-wrapper">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+          <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
+          <circle cx="12" cy="16" r="1.5" fill="currentColor"/>
+          <circle cx="10" cy="12" r="1" fill="currentColor"/>
+          <circle cx="14" cy="14" r="1" fill="currentColor"/>
+        </svg>
+        <h3>Cookie Consent</h3>
+      </div>
+    </div>
+
+    <p class="cookie-desc">
+      We use cookies (or similar technologies) on our website and other digital properties for a number of purposes, 
+      including to improve website performance, understand how you interact with our website, provide personalized 
+      content, and for advertising purposes. For more details on the cookies we use and how you can manage them, 
+      please view our <a [href]="links.terms">Terms & Privacy Policy</a>.
+    </p>
+
+    <div class="modal-footer">
+      <button class="btn-manage" (click)="closePopUp()">Manage Preference</button>
+      
+      <button class="btn-accept" (click)="acceptAll()">
+        Accept All &rarr;
+      </button>
+    </div>
+
+  </div>
+</div>

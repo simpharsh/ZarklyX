@@ -1,6 +1,5 @@
 <div class="hero">
 
-  <!-- Background -->
   <div 
     class="bg"
     [style.backgroundImage]="'url(' + slides[current].image + ')'"
@@ -8,28 +7,39 @@
 
   <div class="overlay"></div>
 
-  <!-- Content -->
   <div class="content">
     <h1>{{ slides[current].title }}</h1>
     <p>{{ slides[current].desc }}</p>
 
     <div class="buttons">
-      <button class="primary">Get Started</button>
+      <button class="primary">Get Started &rarr;</button>
       <button class="secondary">Learn More</button>
     </div>
   </div>
 
-  <!-- Badges -->
   <div 
     *ngFor="let badge of slides[current].badges"
     class="badge"
     [ngClass]="badge.class"
   >
-    <strong>{{ badge.title }}</strong>
+    <div class="badge-header">
+      <strong>{{ badge.title }}</strong>
+      
+      <div *ngIf="badge.hasGraph" class="sparkline-container">
+        <svg class="sparkline" viewBox="0 0 65 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="chartFade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3fbfb0" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#3fbfb0" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 20 L2 20 L8 23 L13 15 L17 18 L25 5 L29 8 L35 2 L39 6 L44 3 L49 6 L65 6 L65 30 L0 30 Z" fill="url(#chartFade)"/>
+          <path d="M0 20 L2 20 L8 23 L13 15 L17 18 L25 5 L29 8 L35 2 L39 6 L44 3 L49 6 L65 6" stroke="#3fbfb0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
     <span>{{ badge.desc }}</span>
   </div>
-
-  <!-- Control -->
-  <button class="next" (click)="next()">›</button>
 
 </div>

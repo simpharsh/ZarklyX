@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import '@flaticon/flaticon-uicons/css/all/all.css';
 
 interface OrbitItem {
   label: string;

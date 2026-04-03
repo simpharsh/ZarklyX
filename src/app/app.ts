@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CookieConsent } from "./components/cookie-consent/cookie-consent";
 import { Navbar } from "./components/navbar/navbar";
 import { HeroComponent } from "./components/hero/hero";
 import { EcosystemComponent } from './components/ecosystem/ecosystem';
@@ -14,7 +15,7 @@ import { FooterComponent } from "./components/footer/footer";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar, HeroComponent, EcosystemComponent, NextGenComponent, BlackSectionComponent, SlidersComponent, ExpertSolutionsComponent, TrustedIntegrationsComponent, FaqComponent, FooterComponent],
+  imports: [RouterOutlet,CookieConsent, Navbar, HeroComponent, EcosystemComponent, NextGenComponent, BlackSectionComponent, SlidersComponent, ExpertSolutionsComponent, TrustedIntegrationsComponent, FaqComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

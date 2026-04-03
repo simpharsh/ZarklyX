@@ -1,69 +1,73 @@
 <section class="next-gen-section">
-  <div class="section-header">
-    <div class="title-area">
-      <div class="teal-line"></div>
-      <h2>We Are the Next-Generation<br>Business Management Experience</h2>
-    </div>
-    <div class="desc-area">
-      <p>Streamline your entire digital workflow with FosterX. From strategy to execution, unlock the full potential of social media to elevate your marketing, boost productivity, and drive results across your entire organization.</p>
-    </div>
-  </div>
-
-  <div class="bento-grid">
+  <div class="next-gen-container">
     
-    <div class="left-col">
-      <div class="bento-card large-image-card">
-        <img src="/assets/body/body-image-1.png" alt="Team Meeting">
-        <div class="image-overlay">
-          <div class="overlay-left">
-            <h3>Lorem World Class<br>Supported</h3>
-          </div>
-          <div class="overlay-right">
-            <p>Streamline your entire digital workflow with FosterX,<br>lorem From Streamline your.</p>
-          </div>
-        </div>
+    <div class="section-header">
+      <div class="title-area">
+        <div class="teal-line"></div>
+        <h2>We Are the Next-Generation<br>Business Management Experience</h2>
       </div>
-
-      <div class="bottom-split">
-        <div class="bento-card teal-text-card">
-          <p class="small-text">Streamline your entire digital workflow with FosterX, lorem From Streamline your our entire digital workflow with FosterX, lorem From.</p>
-          <h4>Lorem ipsum system supported</h4>
-        </div>
-        
-        <div class="bento-card stat-card">
-          <div class="corner-decor"></div>
-          <div class="stat-number">71+</div>
-          <p>Unlock the full potential of social media to elevate your marketing.</p>
-        </div>
+      <div class="desc-area">
+        <p>Streamline your entire digital workflow with FosterX. From strategy to execution, unlock the full potential of social media to elevate your marketing, boost productivity, and drive results across your entire organization.</p>
       </div>
     </div>
 
-    <div class="right-col">
-      <div class="bento-card slider-card">
-        
-        <div class="slider-wrapper" #slider (scroll)="onScroll($event)">
-          <img src="/assets/body/body-image-2.png" alt="App UI 1">
-          <img src="/assets/body/body-image-5.png" alt="App UI 2">
-          <img src="/assets/body/body-image-6.png" alt="App UI 3">
+    <div class="bento-grid">
+      
+      <div class="left-col">
+        <div class="bento-card large-image-card">
+          <img src="/assets/body/body-image-1.png" alt="Team Meeting">
+          <div class="image-overlay">
+            <div class="overlay-left">
+              <h3>Lorem World Class<br>Supported</h3>
+            </div>
+            <div class="overlay-right">
+              <p>Streamline your entire digital workflow with FosterX,<br>lorem From Streamline your.</p>
+            </div>
+          </div>
         </div>
-        
-        <div class="slider-dots">
-          <div class="dot" [class.active]="currentSlide === 0" (click)="goToSlide(0)"></div>
-          <div class="dot" [class.active]="currentSlide === 1" (click)="goToSlide(1)"></div>
-          <div class="dot" [class.active]="currentSlide === 2" (click)="goToSlide(2)"></div>
+
+        <div class="bottom-split">
+          <div class="bento-card teal-text-card">
+            <p class="small-text">Streamline your entire digital workflow with FosterX, lorem From Streamline your our entire digital workflow with FosterX, lorem From.</p>
+            <h4>Lorem ipsum system supported</h4>
+          </div>
+          
+          <div class="bento-card stat-card">
+            <div class="corner-decor"></div>
+            <div class="stat-number">71+</div>
+            <p>Unlock the full potential of social media to elevate your marketing.</p>
+          </div>
         </div>
-        
       </div>
 
-      <div class="bento-card cta-card">
-        <h4>Get Started for Free</h4>
-        <div class="icon-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a093" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+      <div class="right-col">
+        <div class="bento-card slider-card">
+          
+          <div class="slider-wrapper" #slider (scroll)="onScroll($event)">
+            <img src="/assets/body/body-image-2.png" alt="App UI 1">
+            <img src="/assets/body/body-image-5.png" alt="App UI 2">
+            <img src="/assets/body/body-image-6.png" alt="App UI 3">
+          </div>
+          
+          <div class="slider-dots">
+            <div class="dot" [class.active]="currentSlide === 0" (click)="goToSlide(0)"></div>
+            <div class="dot" [class.active]="currentSlide === 1" (click)="goToSlide(1)"></div>
+            <div class="dot" [class.active]="currentSlide === 2" (click)="goToSlide(2)"></div>
+          </div>
+          
+        </div>
+
+        <div class="bento-card cta-card">
+          <h4>Get Started for Free</h4>
+          <div class="icon-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a093" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
         </div>
       </div>
+
     </div>
 
   </div>
