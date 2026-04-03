@@ -1,0 +1,217 @@
+/* --- Base Setup --- */
+.black-section {
+  background-color: #020606; 
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  padding: 80px 0 120px 0; /* Removed horizontal padding so the Z can touch the edge */
+  background-image: radial-gradient(circle 800px at top left, rgba(26, 169, 159, 0.15), transparent 100%);
+  border-radius: 40px; 
+  margin-bottom: 80px; 
+  margin-top: 20px;
+}
+
+/* --- TOP HERO CONTAINER (Holds Text, Words, and Z Image) --- */
+.top-hero-container {
+  position: relative;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between;
+  max-width: 100%;
+  min-height: 500px; 
+}
+
+.text-content {
+  flex: 0 0 45%; 
+  padding-left: 8%; 
+  position: relative;
+  z-index: 3; 
+}
+
+.text-content h2 {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.text-content p {
+  font-size: 14px;
+  color: #a0aec0;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.view-plan-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 12px 32px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-plan-btn:hover {
+  background: white;
+  color: #000;
+}
+
+/* --- The Z Image --- */
+.image-content {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 3;
+  /* 3. Add margin-top here to push the Z image slightly lower than the text */
+  margin-top: 60px; 
+}
+
+.z-image {
+  max-width: 100%;
+  height: auto;
+  /* Adjust this if the Z needs to bleed further off the right screen */
+  margin-right: -5%; 
+}
+
+/* --- The Spotlight Magic (Hidden Words) --- */
+.hidden-words-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2; /* Sits behind the text and Z image */
+  
+  /* Creates the circular flashlight effect */
+  -webkit-mask-image: radial-gradient(circle 200px at var(--mouse-x, -500px) var(--mouse-y, -500px), black 0%, transparent 100%);
+  mask-image: radial-gradient(circle 200px at var(--mouse-x, -500px) var(--mouse-y, -500px), black 0%, transparent 100%);
+}
+
+.floating-word {
+  position: absolute;
+  color: #1aa99f; 
+  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* --- Bottom Showcase Area --- */
+.bottom-showcase {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bottom-showcase h3 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.teal-text {
+  color: #1aa99f;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #a0aec0;
+  margin-bottom: 60px;
+  line-height: 1.6;
+}
+
+/* --- Navigation Tabs --- */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.nav-item {
+  color: #1aa99f;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-bottom: 12px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+}
+
+.nav-item.active {
+  color: #ffffff;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(255,255,255,0.6); 
+}
+
+/* --- Overlapping 3-Pane Carousel --- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 550px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-glow {
+  position: absolute;
+  bottom: -40px;
+  width: 600px;
+  height: 150px;
+  background: radial-gradient(ellipse at center, rgba(26, 169, 159, 0.4) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+/* Base class for all 3 layers */
+.carousel-img {
+  position: absolute;
+  border-radius: 12px;
+  transition: all 0.4s ease-in-out; 
+  /* Sets the base size for all images so they match exactly */
+  width: 55%; 
+}
+
+/* Top Layer (Center) */
+.center-img {
+  z-index: 3;
+  opacity: 1; /* Full density */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  transform: translateX(0) scale(1);
+}
+
+/* 2nd & 3rd Layers (Sides) */
+.side-img {
+  z-index: 1;
+  opacity: 0.5; /* 50% transparency */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Pushes the left image over so half is hidden under the center */
+.left-img {
+  transform: translateX(-35%) scale(0.9);
+}
+
+/* Pushes the right image over so half is hidden under the center */
+.right-img {
+  transform: translateX(35%) scale(0.9);
+}

@@ -1,0 +1,182 @@
+/* --- Light Mode Setup --- */
+.sliders-section {
+  padding: 60px 20px 100px 20px;
+  background-color: #ffffff; 
+  color: #000000;            
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* =========================================
+   1. BRAND LOGOS
+========================================= */
+.brand-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 120px;
+}
+
+.brand-slider-wrapper::before,
+.brand-slider-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+}
+.brand-slider-wrapper::before { left: 0; background: linear-gradient(to right, #ffffff 0%, transparent 100%); }
+.brand-slider-wrapper::after { right: 0; background: linear-gradient(to left, #ffffff 0%, transparent 100%); }
+
+.brand-track {
+  display: flex;
+  align-items: center;
+  gap: 80px; 
+  width: max-content;
+  animation: scrollBrands 30s linear infinite;
+}
+
+.brand-logo {
+  height: 45px; 
+  width: auto;
+  object-fit: contain;
+  opacity: 1; /* Changed to 1 so the colors are fully vibrant */
+  transition: opacity 0.3s;
+}
+
+.brand-logo:hover { opacity: 1; }
+
+@keyframes scrollBrands {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+
+/* =========================================
+   2. REVIEWS SLIDER
+========================================= */
+.reviews-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.reviews-header h2 {
+  font-size: 38px;
+  color: #0f172a; 
+  font-weight: 500;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.reviews-header p {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+}
+
+.reviews-slider-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; 
+}
+
+.reviews-slider-wrapper::-webkit-scrollbar {
+  display: none; 
+}
+
+.reviews-track {
+  display: flex;
+  gap: 24px; 
+  padding-bottom: 20px; 
+}
+
+.review-card {
+  /* PERFECT MATH: 100% width, minus two 24px gaps (48px total), divided by 3 cards */
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+  box-sizing: border-box; 
+  
+  background: #fafafa; 
+  border-radius: 12px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #334155; 
+  margin: 0 0 40px 0;
+}
+
+/* --- Card Footer Layout --- */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Keeps stars aligned with the bottom of the text */
+}
+
+.author-block {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  color: #0f172a; 
+  font-weight: 600;
+}
+
+.author-details span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.stars-block {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 5px; /* Adjusts vertical alignment against the text */
+}
+
+/* --- Slider Dots --- */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.slider-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e2e8f0; /* Light gray */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-dots .dot.active {
+  background: #11332b; /* Dark green */
+}   

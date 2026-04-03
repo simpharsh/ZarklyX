@@ -1,0 +1,280 @@
+.next-gen-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- HEADER AREA --- */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.title-area {
+  flex: 1.2;
+}
+
+.teal-line {
+  width: 200px;
+  height: 4px;
+  background-color: #1aa99f;
+  margin-bottom: 24px;
+}
+
+.title-area h2 {
+  font-size: 38px;
+  font-weight: 500;
+  color: #1f332d;
+  line-height: 1.3;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.desc-area {
+  flex: 1;
+  padding-top: 24px;
+}
+
+.desc-area p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- BENTO GRID LAYOUT --- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr; 
+  gap: 20px;
+  align-items: stretch; 
+}
+
+.left-col, .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bento-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: white;
+}
+
+/* --- LEFT COLUMN CARDS --- */
+.large-image-card {
+  flex: 1; 
+  position: relative;
+  min-height: 380px; 
+  overflow: hidden;
+  display: flex;
+}
+
+.large-image-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  padding: 40px 30px 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  z-index: 2; /* Keeps text above the image */
+}
+
+.overlay-left h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.overlay-right p {
+  color: rgba(255,255,255,0.8);
+  font-size: 12px;
+  margin: 0;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+/* Bottom Split */
+.bottom-split {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; 
+  gap: 20px;
+}
+
+.teal-text-card {
+  background: linear-gradient(135deg, #18b2a5, #118c82);
+  padding: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.teal-text-card .small-text {
+  font-size: 13px;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.teal-text-card h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.stat-card {
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 600;
+  color: #1aa99f;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.corner-decor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90px; 
+  height: 90px;
+  
+  /* The Fix: 'circle farthest-side' forces the gradient to stop and curve perfectly! */
+  background: radial-gradient(
+    circle farthest-side at top right,
+    #86dad5 0%, #86dad5 33%,     /* Inner dark teal band */
+    #b2ebe7 33%, #b2ebe7 66%,    /* Middle light teal band */
+    #def6f4 66%, #def6f4 100%,   /* Outer faint teal band */
+    transparent 100%             /* Makes the rest of the box invisible so the edge is round */
+  );
+  z-index: 0; 
+}
+
+/* Add this to make sure your text sits safely ABOVE the corner design */
+.stat-number,
+.stat-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- RIGHT COLUMN CARDS --- */
+.slider-card {
+  flex: 1; 
+  position: relative;
+  min-height: 450px; 
+  background: #f1f5f6;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; 
+}
+
+.slider-wrapper::-webkit-scrollbar { 
+  display: none; 
+}
+
+.slider-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+  flex-shrink: 0; 
+  scroll-snap-align: start;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.slider-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer; /* <--- Add this so it turns into a clicking hand! */
+  transition: background-color 0.3s; /* Makes the color change smooth */
+}
+.slider-dots .dot.active { background: white; }
+
+.cta-card {
+  background: linear-gradient(135deg, #1ab6a6, #128e85);
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta-card h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.icon-btn {
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cta-card:hover .icon-btn {
+  transform: scale(1.05); 
+}

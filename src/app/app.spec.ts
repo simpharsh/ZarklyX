@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
+import { Ecosystem } from './components/ecosystem/ecosystem';
 
 describe('App', () => {
   beforeEach(async () => {

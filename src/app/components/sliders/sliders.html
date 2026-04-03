@@ -1,0 +1,53 @@
+<section class="sliders-section">
+  
+  <div class="brand-slider-wrapper">
+    <div class="brand-track">
+      <ng-container *ngFor="let i of [1, 2]">
+        <img *ngFor="let logo of brandLogos" [src]="logo" alt="Brand Logo" class="brand-logo">
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="reviews-section">
+    <div class="reviews-header">
+      <h2>Loved by teams worldwide</h2>
+      <p>See how businesses grow with ZarklyX</p>
+    </div>
+    
+    <div class="reviews-slider-wrapper" #reviewsSlider (scroll)="onScroll($event)">
+      <div class="reviews-track">
+        
+        <div class="review-card" *ngFor="let review of reviews">
+          <p class="review-text">{{ review.text }}</p>
+          
+          <div class="card-footer">
+            
+            <div class="author-block">
+              <img [src]="review.pfp" alt="Avatar" class="avatar-img" onerror="this.src='https://ui-avatars.com/api/?name=Ethena+Milla&background=1aa99f&color=fff'">
+              <div class="author-details">
+                <h4>{{ review.name }}</h4>
+                <span>{{ review.company }}</span>
+              </div>
+            </div>
+
+            <div class="stars-block">
+              <svg *ngFor="let star of [1,2,3,4,5]" width="16" height="16" viewBox="0 0 24 24" fill="#FACC15" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+              </svg>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slider-dots">
+      <div class="dot" [class.active]="currentSlide === 0" (click)="onDotClick(0)"></div>
+      <div class="dot" [class.active]="currentSlide === 1" (click)="onDotClick(1)"></div>
+      <div class="dot" [class.active]="currentSlide === 2" (click)="onDotClick(2)"></div>
+    </div>
+
+  </div>
+
+</section>

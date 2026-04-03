@@ -1,0 +1,65 @@
+<div class="falcon-container">
+  
+  <h1 class="hero-title">
+    Stop juggling tools<br>
+    Start scaling with <span class="falcon-text">Falcon</span> view.
+  </h1>
+  
+  <div class="orbit-ring outer-ring"></div>
+  <div class="orbit-ring middle-ring"></div>
+  <div class="orbit-ring inner-ring"></div>
+
+  <div class="center-hub">
+    <img src="/assets/logos/logo-vector-zarklyx.png" alt="ZarklyX Logo" class="center-logo">
+  </div>
+
+  <div *ngFor="let item of allOrbitItems" 
+       class="orbit-item"
+       [ngClass]="{'reverse': item.angle >= 180}" 
+       [ngStyle]="{
+         'transform': 'translate(-50%, -50%) rotate(' + item.angle + 'deg) translateY(-' + item.radius + 'px) rotate(-' + item.angle + 'deg)'
+       }">
+    <div class="item-icon" [ngStyle]="{'background-color': item.color}">
+      <i [class]="item.iconClass"></i>
+    </div>
+    <span class="item-label">{{ item.label }}</span>
+  </div>
+
+  <div class="floating-card agency-card">
+    <h3>21K+ Agency</h3>
+    <p>Streamline your entire digital<br>FosterX. From strategy.</p>
+    <div class="avatars">
+      <img src="/assets/pfps/pfp3.png" class="avatar" alt="Avatar">
+      <img src="/assets/pfps/pfp4.png" class="avatar" alt="Avatar">
+      <img src="/assets/pfps/pfp5.png" class="avatar" alt="Avatar">
+    </div>
+  </div>
+
+  <div class="floating-card growth-card">
+    <div class="growth-header">
+      <h3>5x Growth</h3>
+      <p>Streamline your entire digital<br>FosterX. From strategy.</p>
+    </div>
+    <svg class="sparkline" viewBox="0 0 65 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="chartFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3fbfb0" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#3fbfb0" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 20 L2 20 L8 23 L13 15 L17 18 L25 5 L29 8 L35 2 L39 6 L44 3 L49 6 L65 6 L65 30 L0 30 Z" fill="url(#chartFade)"/>
+        <path d="M0 20 L2 20 L8 23 L13 15 L17 18 L25 5 L29 8 L35 2 L39 6 L44 3 L49 6 L65 6" stroke="#3fbfb0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+  </div>
+
+  <img src="/assets/logos/logo-googlebuisness-1.png" class="floating-icon google" alt="Google">
+  <img src="/assets/logos/logo-facebook-1.png" class="floating-icon facebook" alt="Facebook">
+  <img src="/assets/logos/logo-instagram-1.png" class="floating-icon instagram" alt="Instagram">
+  <img src="/assets/logos/logo-youtube-1.png" class="floating-icon youtube" alt="YouTube">
+  
+  <div class="floating-icon top-avatar-wrapper">
+    <img src="/assets/pfps/pfp1.png" class="avatar-with-arrow" alt="Avatar">
+  </div>  
+  <img src="/assets/pfps/pfp2.png" class="floating-icon avatar-bottom" alt="Avatar" onerror="this.style.display='none'">
+
+</div>

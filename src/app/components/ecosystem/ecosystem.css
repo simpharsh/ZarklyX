@@ -1,0 +1,301 @@
+.falcon-container {
+  position: relative;
+  width: 100%;
+  height: 900px; /* Adjust height based on your page layout */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+  
+/* --- 1. THE TITLE & GRADIENT TEXT --- */
+.hero-title {
+  position: absolute; 
+  top: 40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 20; 
+  margin: 0; 
+  text-align: center;
+  font-size: 3.2rem; 
+  font-weight: 500;
+  color: #122c27; 
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.falcon-text {
+  position: relative;
+  display: inline-block;
+  font-family: 'Caveat', cursive; /* Use a script font here */
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(90deg, #8A96FF, #D672A5); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  padding: 0 5px;
+}
+
+.falcon-text::after {
+  content: '';
+  position: absolute;
+  left: -5%; 
+  bottom: -2px; 
+  width: 110%; 
+  height: 16px; 
+  background-image: url('/assets/Vector%203.svg'); 
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: -1; 
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+
+  /* 1. The Curve Border Trick */
+  /* This makes the border visible on the left/right, but fade away completely at the top/bottom */
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: transparent #ccebe6 transparent #ccebe6; 
+
+  /* 2. The Horizontal Cylinder Gradient */
+  /* Left edge is blue, Middle 50% is pure white (top to bottom), Right edge is blue */
+  background: linear-gradient(
+    to right, 
+    #edf7f6 0%,      /* Left outer edge blue */
+    #ffffff 25%,     /* Fades to white */
+    #ffffff 75%,     /* Stays pure white across the center */
+    #edf7f6 100%     /* Fades back to blue on the right edge */
+  );
+}
+
+.outer-ring {
+  width: 1050px;
+  height: 1050px;
+  z-index: 1;
+}
+
+.middle-ring {
+  width: 740px;
+  height: 740px;
+  z-index: 2;
+  /* Make the middle ring slightly more pronounced */
+  border-color: transparent #bce3dc transparent #bce3dc;
+}
+
+.inner-ring {
+  width: 260px;
+  height: 260px;
+  z-index: 3;
+  border-color: transparent #bce3dc transparent #bce3dc;
+}
+
+/* --- 3. CENTER HUB --- */
+.center-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background-color: #3fbfb0; /* Teal background just in case PNG is transparent */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(63, 191, 176, 0.25);
+  z-index: 10;
+}
+
+.center-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* --- 4. ORBIT ITEMS (Pills) --- */
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: row; 
+  gap: 8px;
+  background: white;
+  padding: 6px 16px 6px 6px; 
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.orbit-item.reverse {
+  flex-direction: row-reverse; 
+  padding: 6px 6px 6px 16px; 
+}
+
+.orbit-item .item-icon {
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.orbit-item .item-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* --- 5. FLOATING CARDS --- */
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  z-index: 8;
+  border: 1px solid #f1f5f9;
+}
+
+/* Transparent Agency Card (Top Left) */
+.floating-card.agency-card {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  top: 15%; 
+  left: 6%;
+}
+
+.agency-card h3 {
+  font-size: 32px;
+  color: #122c27; 
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.agency-card p {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatars .avatar {
+  width: 40px;         
+  height: 40px;        
+  border-radius: 50%;  
+  border: 2px solid #ffffff; 
+  object-fit: cover;   
+  margin-left: -12px;  
+}
+.avatars .avatar:first-child { margin-left: 0; }
+
+/* 5x Growth Card (Bottom Center) */
+.floating-card.growth-card {
+  bottom: 12%;
+  left: 32%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+}
+
+.growth-card h3 {
+  font-size: 22px;
+  color: #122c27;
+  margin: 0 0 4px 0;
+}
+
+.growth-card p {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.growth-card .sparkline {
+  height: 35px;
+  width: auto;
+}
+
+/* --- 6. FLOATING LOGOS & AVATARS --- */
+.floating-icon {
+  position: absolute;
+  z-index: 6;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));
+}
+
+/* Adjust these values to match exactly where you want them */
+.floating-icon.google { top: 15%; right: 16%; width: 50px; }
+.floating-icon.facebook { bottom: 20%; left: 55%; width: 50px; }
+.floating-icon.instagram { top: 60%; left: 10%; width: 50px; }
+.floating-icon.youtube { top: 34%; left: 28%; width: 50px; }
+
+/* Individual scattered profile pictures */
+.top-avatar-wrapper {
+  position: absolute;
+  top: 22%; /* Adjust as needed */
+  left: 48%; /* Adjust to perfectly center above the hub */
+  z-index: 7;
+}
+
+.avatar-with-arrow {
+  width: 45px; 
+  height: 45px; 
+  border-radius: 50%; 
+  
+  border: 3px solid #3fbfb0; /* Adjust color hex if your teal is slightly different */
+  object-fit: cover;
+  display: block;
+}
+
+/* 2. The Floating Cursor Arrow */
+.top-avatar-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 4px;       /* Pushes the arrow down slightly from the top */
+  right: -14px;   /* Pushes the arrow outside the circle to the right */
+  width: 18px;    
+  height: 18px;
+      
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233fbfb0'%3E%3Cpath d='M5.5 2.5L21.5 8.5L12.5 11.5L9.5 20.5L5.5 2.5Z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  /* Tilts the arrow slightly to match your image */
+  transform: rotate(110deg); 
+  z-index: 8;
+}
+
+.floating-icon.avatar-bottom { 
+  bottom: 15%; 
+  right: 15%; 
+  width: 45px; 
+  height: 45px; 
+  border-radius: 50%; 
+  border: 3px solid white;
+}

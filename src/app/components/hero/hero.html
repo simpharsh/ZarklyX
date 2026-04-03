@@ -1,0 +1,35 @@
+<div class="hero">
+
+  <!-- Background -->
+  <div 
+    class="bg"
+    [style.backgroundImage]="'url(' + slides[current].image + ')'"
+  ></div>
+
+  <div class="overlay"></div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>{{ slides[current].title }}</h1>
+    <p>{{ slides[current].desc }}</p>
+
+    <div class="buttons">
+      <button class="primary">Get Started</button>
+      <button class="secondary">Learn More</button>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div 
+    *ngFor="let badge of slides[current].badges"
+    class="badge"
+    [ngClass]="badge.class"
+  >
+    <strong>{{ badge.title }}</strong>
+    <span>{{ badge.desc }}</span>
+  </div>
+
+  <!-- Control -->
+  <button class="next" (click)="next()">›</button>
+
+</div>

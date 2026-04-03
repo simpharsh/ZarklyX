@@ -1,0 +1,90 @@
+.top-banner {
+  background: linear-gradient(90deg, #ff7eb3, #6a5af9, #3b82f6);
+  color: white;
+  text-align: center;
+  font-size: 12.5px;
+  padding: 6px 0;
+  font-weight: 500;
+}
+
+/* Navbar */
+.navbar {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.logo {
+  height: 30px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.menu li:hover {
+  color: #111827;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.login {
+  background: #eef2f7;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu li i {
+  font-size: 16px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.cta {
+  background: #0f2f2f;
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}

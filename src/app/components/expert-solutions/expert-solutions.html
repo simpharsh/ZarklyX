@@ -1,0 +1,58 @@
+<section class="expert-section">
+  <div class="container">
+    
+    <div class="left-column">
+      <img src="/assets/body/body-image-3.png" alt="Team working" class="main-img">
+      
+      <div class="floating-card">
+        <h4>Trusted by 21+ agency</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod.</p>
+        
+        <div class="card-footer">
+          <div class="avatar-group">
+            <img *ngFor="let avatar of avatars" [src]="avatar" class="overlap-avatar" alt="User">
+          </div>
+          
+          <div class="rating-info">
+            <div class="stars">
+              <svg *ngFor="let star of [1,2,3,4,5]" width="14" height="14" viewBox="0 0 24 24" fill="#FACC15" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+              </svg>
+            </div>
+            <span class="rating-text">4.5 Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <span class="sub-heading">Jon lorem ipsum</span>
+      <h2>Expert solutions for your<br>lorem future</h2>
+      
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-item" *ngFor="let feature of features">
+          
+          <div class="icon-circle">
+            <i [class]="feature.iconClass"></i>
+          </div>
+          
+          <span class="feature-text">{{ feature.text }}</span>
+        </div>
+      </div>
+
+      <button class="btn-trial">Start free trial</button>
+
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <h3>{{ MathFloor(stat.current) }}{{ stat.suffix }}</h3>
+          <p>{{ stat.text }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

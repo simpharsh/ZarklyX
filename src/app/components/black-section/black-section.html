@@ -1,0 +1,55 @@
+<section class="black-section">
+
+  <div class="top-hero-container" 
+       (mousemove)="updateSpotlight($event)" 
+       [style.--mouse-x.px]="mouseX" 
+       [style.--mouse-y.px]="mouseY">
+       
+    <div class="text-content">
+      <h2>Manage your business by lorem<br>ipsum it to ZarklyX.</h2>
+      <p>Lorem ipsum zempos hid PULSE Al analyzes your needs and suggests the ideal<br>ZarklyX package in seconds.</p>
+      <button class="view-plan-btn">View Plan</button>
+    </div>
+
+    <div class="hidden-words-layer">
+      <span class="floating-word" style="top: 25%; left: 45%; font-size: 1.8rem;">Smart Management</span>
+      <span class="floating-word" style="top: 45%; left: 60%; font-size: 1.6rem;">Ai based</span>
+      <span class="floating-word" style="top: 60%; left: 35%; font-size: 2.2rem;">Lorem ipsum</span>
+      <span class="floating-word" style="top: 75%; left: 25%; font-size: 1.5rem;">Grow business</span>
+      <span class="floating-word" style="top: 35%; left: 75%; font-size: 1.4rem;">Automation</span>
+      <span class="floating-word" style="top: 45%; left: 15%; font-size: 1.8rem;">Smart Management</span>
+      <span class="floating-word" style="top: 35%; left: 35%; font-size: 1.6rem;">Ai based</span>
+      <span class="floating-word" style="top: 60%; left: 35%; font-size: 2.2rem;">Lorem ipsum</span>
+      <span class="floating-word" style="top: 75%; left: 25%; font-size: 1.5rem;">Grow business</span>
+      <span class="floating-word" style="top: 35%; left: 75%; font-size: 1.4rem;">Automation</span>
+    </div>
+
+    <div class="image-content">
+      <img src="/assets/body/body-image-Z.png" alt="ZarklyX Z" class="z-image">
+    </div>
+    
+  </div>
+
+  <div class="bottom-showcase">
+    <h3>Choose <span class="teal-text">ZarklyX</span></h3>
+    <p class="subtitle">Lorem ipsum zempos hid PULSE Al analyzes your needs and suggests the ideal<br>ZarklyX package in seconds.</p>
+
+    <div class="nav-list">
+      <div class="nav-item" 
+           *ngFor="let tab of tabs" 
+           [class.active]="activeTab === tab"
+           (click)="activeTab = tab">
+        {{ tab.name }}
+      </div>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel-glow"></div>
+      
+      <img [src]="activeTab.dashboardImg" class="carousel-img side-img left-img" alt="Dashboard Left Echo">
+      <img [src]="activeTab.dashboardImg" class="carousel-img side-img right-img" alt="Dashboard Right Echo">
+      <img [src]="activeTab.dashboardImg" class="carousel-img center-img" alt="Dashboard Main">
+    </div>
+  </div>
+
+</section>
